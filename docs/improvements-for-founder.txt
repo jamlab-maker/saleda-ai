@@ -1,0 +1,10 @@
+What we improved compared to the original `saleda.ai`
+
+First, we rebuilt the visual system to feel more premium, consistent, and trustworthy. The new site uses a tighter neutral palette with a single confident key color (blue) that carries across navigation, highlights, and interactive states. This reduces visual noise, makes hierarchy clearer, and gives the brand a steadier “legal/B2B” tone.
+
+Second, the layout and information design are structured to help visitors absorb the product story faster. The original site has strong content, but the scanning experience can be fragmented. In the new version, each page follows a predictable rhythm—headline, short supporting copy, then cards or steps—so users can understand the value proposition without getting lost. Typography, spacing, and simplified section backgrounds are designed to keep focus on the message rather than the UI.
+
+Third, we reduced CTA overload and placed calls-to-action where they make contextual sense. Instead of repeating many CTAs in the same viewport, CTAs are attached to the moment of intent: after the demo, after key proof points, and at the end of pages. This keeps conversion paths obvious without making the site feel “pushy” or distracting.
+
+Finally, we made it immediately clear that the Voice AI intake agent is the core product. On first landing, users can interact with a “Talk to Maya” demo UI that includes an animated orb and a voice/chat toggle. This mirrors modern AI product expectations and communicates “this is a working agent” in seconds, before users even scroll. The result is a more intuitive first impression, stronger product clarity, and a smoother path to booking a demo.
+

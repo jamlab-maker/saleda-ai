@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Saleda AI</title>
+  <meta name="description" content="Pricing with interactive billing toggle and volume estimator.">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="float-demo" onclick="openDemoModal()" aria-label="Talk to Maya — live demo">
+    <div class="float-orb-mini" aria-hidden="true"></div>
+    Talk to Maya
+  </button>
+
+  <!-- Demo modal -->
+  <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="closeDemoModalOutside(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title">Maya — AI Intake Agent</span>
+        <button class="modal-close" onclick="closeDemoModal()" aria-label="Close demo">✕</button>
+      </div>
+      <div style="padding:0">
+        <div class="demo-tabs" id="modalTabs" style="padding:14px 16px 0">
+          <button class="demo-tab" onclick="switchDemoTab('chat','modalTabs','modalChat','modalVoice')" aria-pressed="false">Chat</button>
+          <button class="demo-tab active" onclick="switchDemoTab('voice','modalTabs','modalChat','modalVoice')" aria-pressed="true">Voice</button>
+        </div>
+        <div id="modalChat" style="padding:16px"></div>
+        <div id="modalVoice" class="demo-voice-panel active" style="padding:28px 24px 24px">
+          <div class="orb-container" onclick="toggleOrb('Modal')" aria-label="Click to start voice demo" role="button" tabindex="0"
+               onkeydown="if(event.key==='Enter')toggleOrb('Modal')">
+            <div class="orb-rings" aria-hidden="true">
+              <div class="orb-ring"></div><div class="orb-ring"></div><div class="orb-ring"></div>
+            </div>
+            <div class="orb" id="orbModal"></div>
+          </div>
+          <div class="orb-name">Maya</div>
+          <div class="orb-subtitle">Saleda AI Intake Agent</div>
+          <div class="orb-status" id="orbModalStatus">Click orb or call agent to start</div>
+          <div class="orb-btns">
+            <button class="orb-btn orb-btn-primary" onclick="toggleOrb('Modal')" aria-label="Call Maya agent">
+              <div class="orb-btn-circle">📞</div>
+              <span class="orb-btn-label">Call Agent</span>
+            </button>
+            <button class="orb-btn orb-btn-secondary" aria-label="Get a callback">
+              <div class="orb-btn-circle">📲</div>
+              <span class="orb-btn-label">Get a call</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="./index.html" class="nav-logo" aria-label="Saleda AI home">
+        <div class="nav-logo-icon" aria-hidden="true">S</div>
+        Saleda AI
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="./platform.html">Platform</a></li>
+        <li><a href="./agents.html">Agents</a></li>
+        <li><a href="./integrations.html">Integrations</a></li>
+        <li><a href="./security.html">Security</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#" class="btn-login">Log in</a>
+        <a href="#demo" class="btn-cta">Book a Demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero hero-compact" aria-labelledby="h1">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-eyebrow reveal" role="note">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Pricing
+      </div>
+      <h1 class="reveal" id="h1" style="max-width:900px">Pricing that scales with volume.</h1>
+      <p class="hero-sub reveal">This page is interactive: toggle billing and estimate monthly cost based on call minutes (demo calculator).</p>
+
+      <div class="pricing-toggle reveal" aria-label="Billing toggle">
+        <span style="font-size:13px;color:var(--gray-500);font-weight:650">Monthly</span>
+        <div class="toggle" id="billingToggle" data-on="false" role="switch" aria-checked="false" tabindex="0">
+          <div class="toggle-knob" aria-hidden="true"></div>
+        </div>
+        <span style="font-size:13px;color:var(--gray-500);font-weight:650">Annual</span>
+        <span class="pill blue">Save 10%</span>
+      </div>
+    </section>
+
+    <section class="section section-white" aria-labelledby="plans">
+      <div class="container">
+        <h2 class="section-h2 reveal" id="plans">Plans</h2>
+        <p class="section-sub reveal">Numbers here are placeholders for demo UX. The interaction pattern is what matters.</p>
+
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <div class="price-top">
+              <div>
+                <div class="price-name">Starter</div>
+                <div class="pill" style="margin-top:8px">Best for pilots</div>
+              </div>
+              <div style="text-align:right">
+                <div class="price" data-price-monthly="1500" data-price-annual="16200">$1,500</div>
+                <small data-price-unit>/mo</small>
+              </div>
+            </div>
+            <div class="price-desc">Capture + qualify with core routing and CRM sync.</div>
+            <ul class="bullets">
+              <li><span class="check">✓</span>Maya voice agent</li>
+              <li><span class="check">✓</span>Basic qualification</li>
+              <li><span class="check">✓</span>HubSpot/Salesforce sync</li>
+            </ul>
+            <div style="margin-top:16px">
+              <a class="btn-hero-secondary" href="#demo">Book a demo</a>
+            </div>
+          </div>
+
+          <div class="price-card featured reveal">
+            <div class="price-top">
+              <div>
+                <div class="price-name">Growth</div>
+                <div class="pill blue" style="margin-top:8px">Most popular</div>
+              </div>
+              <div style="text-align:right">
+                <div class="price" data-price-monthly="3200" data-price-annual="34560">$3,200</div>
+                <small data-price-unit>/mo</small>
+              </div>
+            </div>
+            <div class="price-desc">High-volume intake with advanced routing and analytics.</div>
+            <ul class="bullets">
+              <li><span class="check">✓</span>Advanced qualification</li>
+              <li><span class="check">✓</span>Warm handoff bundles</li>
+              <li><span class="check">✓</span>Dashboards + QA review</li>
+            </ul>
+            <div style="margin-top:16px">
+              <a class="btn-hero-primary" href="#demo">Get started <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-top">
+              <div>
+                <div class="price-name">Enterprise</div>
+                <div class="pill" style="margin-top:8px">Security + SLA</div>
+              </div>
+              <div style="text-align:right">
+                <div class="price" data-price-monthly="6500" data-price-annual="70200">$6,500</div>
+                <small data-price-unit>/mo</small>
+              </div>
+            </div>
+            <div class="price-desc">RBAC, compliance controls, and custom deployment support.</div>
+            <ul class="bullets">
+              <li><span class="check">✓</span>RBAC + audit logs</li>
+              <li><span class="check">✓</span>Custom integrations</li>
+              <li><span class="check">✓</span>SLA support</li>
+            </ul>
+            <div style="margin-top:16px">
+              <a class="btn-hero-secondary" href="#demo">Talk to sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-gray" aria-labelledby="calc">
+      <div class="container">
+        <p class="section-eyebrow reveal">Estimator</p>
+        <h2 class="section-h2 reveal" id="calc">Estimate by call minutes.</h2>
+        <p class="section-sub reveal">Interactive slider: changes update the estimate instantly.</p>
+
+        <div class="card reveal" style="margin-top:18px">
+          <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+            <div class="pill blue">Monthly call minutes: <span id="volumeOut">6000</span></div>
+            <div class="pill" id="estPrice">$2,280 / mo (est.)</div>
+          </div>
+          <div style="margin-top:14px">
+            <input id="volume" type="range" min="1000" max="30000" step="500" value="6000" style="width:100%">
+          </div>
+          <div style="margin-top:10px;color:var(--gray-500);font-size:13px;line-height:1.65">
+            Demo-only formula: base + per-minute. Replace with real pricing logic when ready.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue" id="demo" aria-labelledby="cta">
+      <div class="container" style="text-align:center">
+        <h2 class="section-h2 reveal" id="cta">Ready to see it live?</h2>
+        <p class="section-sub reveal" style="margin:0 auto">Talk to Maya, then we’ll map the workflow into your stack.</p>
+        <div class="hero-ctas reveal" style="margin-top:26px;margin-bottom:0">
+          <button class="btn-hero-primary" onclick="openDemoModal()">Talk to Maya <span aria-hidden="true">→</span></button>
+          <a class="btn-hero-secondary" href="./integrations.html">Check integrations</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="nav-logo" style="display:inline-flex" aria-label="Saleda AI home">
+          <div class="nav-logo-icon" aria-hidden="true">S</div>Saleda AI
+        </a>
+        <p>AI intake for mass tort firms and legal marketing. Answer in seconds, qualify at scale, and turn missed calls into signed retainers.</p>
+        <div class="footer-social" aria-label="Social media">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="./agents.html">Maya AI Voice Agent</a></li>
+          <li><a href="./platform.html#workflow">Workflow</a></li>
+          <li><a href="./platform.html#analytics">Analytics</a></li>
+          <li><a href="./integrations.html">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./security.html">Security</a></li>
+          <li><a href="./pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="./docs/why-better.md">Why this version</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Saleda AI, Inc. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </footer>
+
+  <script src="./assets/site.js"></script>
+</body>
+</html>
+

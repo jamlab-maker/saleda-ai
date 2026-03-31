@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security — Saleda AI</title>
+  <meta name="description" content="Enterprise-grade security & compliance for legal intake: HIPAA, encryption, access controls, audit logs.">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="float-demo" onclick="openDemoModal()" aria-label="Talk to Maya — live demo">
+    <div class="float-orb-mini" aria-hidden="true"></div>
+    Talk to Maya
+  </button>
+
+  <!-- Demo modal -->
+  <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="closeDemoModalOutside(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title">Maya — AI Intake Agent</span>
+        <button class="modal-close" onclick="closeDemoModal()" aria-label="Close demo">✕</button>
+      </div>
+      <div style="padding:0">
+        <div class="demo-tabs" id="modalTabs" style="padding:14px 16px 0">
+          <button class="demo-tab" onclick="switchDemoTab('chat','modalTabs','modalChat','modalVoice')" aria-pressed="false">Chat</button>
+          <button class="demo-tab active" onclick="switchDemoTab('voice','modalTabs','modalChat','modalVoice')" aria-pressed="true">Voice</button>
+        </div>
+        <div id="modalChat" style="padding:16px"></div>
+        <div id="modalVoice" class="demo-voice-panel active" style="padding:28px 24px 24px">
+          <div class="orb-container" onclick="toggleOrb('Modal')" aria-label="Click to start voice demo" role="button" tabindex="0"
+               onkeydown="if(event.key==='Enter')toggleOrb('Modal')">
+            <div class="orb-rings" aria-hidden="true">
+              <div class="orb-ring"></div><div class="orb-ring"></div><div class="orb-ring"></div>
+            </div>
+            <div class="orb" id="orbModal"></div>
+          </div>
+          <div class="orb-name">Maya</div>
+          <div class="orb-subtitle">Saleda AI Intake Agent</div>
+          <div class="orb-status" id="orbModalStatus">Click orb or call agent to start</div>
+          <div class="orb-btns">
+            <button class="orb-btn orb-btn-primary" onclick="toggleOrb('Modal')" aria-label="Call Maya agent">
+              <div class="orb-btn-circle">📞</div>
+              <span class="orb-btn-label">Call Agent</span>
+            </button>
+            <button class="orb-btn orb-btn-secondary" aria-label="Get a callback">
+              <div class="orb-btn-circle">📲</div>
+              <span class="orb-btn-label">Get a call</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="./index.html" class="nav-logo" aria-label="Saleda AI home">
+        <div class="nav-logo-icon" aria-hidden="true">S</div>
+        Saleda AI
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="./platform.html">Platform</a></li>
+        <li><a href="./agents.html">Agents</a></li>
+        <li><a href="./integrations.html">Integrations</a></li>
+        <li><a href="./security.html">Security</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#" class="btn-login">Log in</a>
+        <a href="./pricing.html#demo" class="btn-cta">Book a Demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero hero-compact" aria-labelledby="h1">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-eyebrow reveal" role="note">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Security &amp; Compliance
+      </div>
+      <h1 class="reveal" id="h1" style="max-width:900px">Enterprise-grade security,<br>built for legal professionals.</h1>
+      <p class="hero-sub reveal">HIPAA compliance, bank-level encryption, and controls that scale with your team.</p>
+    </section>
+
+    <section class="section section-white" aria-labelledby="sec">
+      <div class="container">
+        <p class="section-eyebrow reveal">Controls</p>
+        <h2 class="section-h2 reveal" id="sec">Security you can explain to a client.</h2>
+        <p class="section-sub reveal">This page is intentionally more “document-like” than the homepage — so security reviewers can self-serve.</p>
+
+        <div class="grid-split" style="margin-top:28px">
+          <article class="card reveal">
+            <div class="pill blue">HIPAA</div>
+            <h3 class="card-title" style="margin-top:12px">HIPAA-compliant infrastructure</h3>
+            <p class="card-body">Encryption in transit and at rest, and operational controls designed for protected health and legal information.</p>
+          </article>
+          <article class="card reveal">
+            <div class="pill blue">RBAC</div>
+            <h3 class="card-title" style="margin-top:12px">Role-based access control</h3>
+            <p class="card-body">Granular permissions for transcripts, lead records, and admin actions — plus audit logging.</p>
+          </article>
+        </div>
+
+        <div class="grid-split" style="margin-top:14px">
+          <article class="card reveal">
+            <div class="pill blue">Encryption</div>
+            <h3 class="card-title" style="margin-top:12px">Bank-level encryption</h3>
+            <p class="card-body">AES-256 at rest and modern TLS in transit — designed for enterprise deployment requirements.</p>
+          </article>
+          <article class="card reveal">
+            <div class="pill blue">Reliability</div>
+            <h3 class="card-title" style="margin-top:12px">Uptime & support</h3>
+            <p class="card-body">SLA support for high-volume operations — designed to handle overflow and after-hours intake.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-gray" aria-labelledby="faq">
+      <div class="container" style="text-align:center;margin-bottom:24px">
+        <h2 class="section-h2 reveal" id="faq">Security FAQ</h2>
+        <p class="section-sub reveal" style="margin:0 auto">Accordion interaction makes dense content scannable.</p>
+      </div>
+
+      <div class="accordion reveal" role="list" aria-label="Security FAQ accordion">
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" onclick="toggleAccordion(this)">How is data encrypted?<span class="acc-arrow" aria-hidden="true">›</span></button>
+          <div class="acc-panel" role="region"><div class="acc-panel-inner">Data is encrypted at rest (AES-256) and in transit (TLS). Access is gated via least-privilege roles.</div></div>
+        </div>
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" onclick="toggleAccordion(this)">Can we restrict transcript access?<span class="acc-arrow" aria-hidden="true">›</span></button>
+          <div class="acc-panel" role="region"><div class="acc-panel-inner">Yes. RBAC allows separate permissions for transcripts, lead fields, and admin tools. Changes can be audited.</div></div>
+        </div>
+        <div class="acc-item" role="listitem">
+          <button class="acc-btn" aria-expanded="false" onclick="toggleAccordion(this)">What about after-hours intake reliability?<span class="acc-arrow" aria-hidden="true">›</span></button>
+          <div class="acc-panel" role="region"><div class="acc-panel-inner">The system is designed for overflow + after-hours. Even when staff are offline, leads can be captured and qualified instantly.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue" aria-labelledby="cta">
+      <div class="container" style="text-align:center">
+        <h2 class="section-h2 reveal" id="cta">Want the short version?</h2>
+        <p class="section-sub reveal" style="margin:0 auto">Talk to Maya, then see how data routes and syncs — end to end.</p>
+        <div class="hero-ctas reveal" style="margin-top:26px;margin-bottom:0">
+          <button class="btn-hero-primary" onclick="openDemoModal()">Talk to Maya <span aria-hidden="true">→</span></button>
+          <a class="btn-hero-secondary" href="./platform.html#workflow">View platform flow</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="nav-logo" style="display:inline-flex" aria-label="Saleda AI home">
+          <div class="nav-logo-icon" aria-hidden="true">S</div>Saleda AI
+        </a>
+        <p>AI intake for mass tort firms and legal marketing. Answer in seconds, qualify at scale, and turn missed calls into signed retainers.</p>
+        <div class="footer-social" aria-label="Social media">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="./agents.html">Maya AI Voice Agent</a></li>
+          <li><a href="./platform.html#workflow">Workflow</a></li>
+          <li><a href="./platform.html#analytics">Analytics</a></li>
+          <li><a href="./integrations.html">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./security.html">Security</a></li>
+          <li><a href="./pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Docs</h4>
+        <ul>
+          <li><a href="./docs/why-better.md">Why this version</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Saleda AI, Inc. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </footer>
+
+  <script src="./assets/site.js"></script>
+</body>
+</html>
+
