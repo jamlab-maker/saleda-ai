@@ -245,8 +245,12 @@ button,input{font:inherit}
 
 /* ─── DEMO WIDGET ────────────────────────────────────────── */
 .hero-demo-wrapper{position:relative;max-width:700px;width:100%;margin:0 auto}
-.hero-demo{background:#fff;border-radius:20px;border:1px solid transparent;overflow:hidden;box-shadow:var(--shadow);position:relative}
-.hero-demo.is-stroked{border-color:var(--stroke-strong)}
+/* Landing demo: no card frame — blends into hero */
+.hero-demo{background:transparent;border-radius:20px;border:none;overflow:hidden;box-shadow:none;position:relative}
+.hero-demo.is-stroked{border-color:transparent}
+.hero-demo .demo-tabs{background:transparent;padding-top:8px}
+.hero-demo .demo-chat-panel,.hero-demo .demo-voice-panel{background:transparent}
+.hero-demo .chat-input-bar{border-top:none;background:transparent}
 .demo-tabs{display:flex;align-items:center;gap:4px;padding:16px 20px 0;background:#fff}
 .demo-tab{font-size:14px;font-weight:500;color:var(--gray-400);padding:7px 16px;border-radius:var(--radius-pill);border:none;background:none;cursor:pointer;transition:all 0.15s}
 .demo-tab.active{background:#111;color:#fff;font-weight:600}
